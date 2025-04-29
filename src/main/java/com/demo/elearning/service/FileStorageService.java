@@ -37,6 +37,6 @@ public class FileStorageService {
 
         Files.copy(file.getInputStream(), targetLocation);
 
-        return "http://localhost:8080/uploads/" + fileName;
+        return "https://e-learning-backend-r43z.onrender.com/uploads/" + fileName;
     }
 }
