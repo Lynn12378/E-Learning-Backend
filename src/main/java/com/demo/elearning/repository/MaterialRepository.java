@@ -12,4 +12,6 @@ public interface MaterialRepository extends JpaRepository<Material, Long> {
 
     void deleteByChapterId(Long chapterId);
 
+    boolean existsByChapterId(Long chapterId);
+
 }

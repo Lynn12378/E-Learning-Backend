@@ -80,4 +80,8 @@ public class MaterialService {
             super(message);
         }
     }
+
+    public boolean existsByChapterId(Long chapterId) {
+        return materialRepo.existsByChapterId(chapterId);
+    }
 }

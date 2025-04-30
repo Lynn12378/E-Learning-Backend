@@ -83,7 +83,11 @@ public class CourseService {
         if (!courseRepo.existsById(id)) {
             throw new RuntimeException("Course not found");
         }
-        chapterService.deleteChaptersByCourseId(id);
+
+        if (chapterService.existsByCourseId(id)) {
+            chapterService.deleteChaptersByCourseId(id);
+        }
+
         courseRepo.deleteById(id);
     }
 }

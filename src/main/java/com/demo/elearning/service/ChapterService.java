@@ -55,10 +55,13 @@ public class ChapterService {
     @Transactional
     public void deleteChapter(Long id) {
         if (!chapterRepo.existsById(id)) {
-            throw new RuntimeException("Course not found");
+            throw new RuntimeException("Chapter not found");
         }
 
-        materialService.deleteMaterialsByChapterId(id);
+        if (materialService.existsByChapterId(id)) {
+            materialService.deleteMaterialsByChapterId(id);
+        }
+
         chapterRepo.deleteById(id);
     }
 
@@ -79,5 +82,9 @@ public class ChapterService {
         public ResourceNotFoundException(String message) {
             super(message);
         }
+    }
+
+    public boolean existsByCourseId(Long courseId) {
+        return chapterRepo.existsByCourseId(courseId);
     }
 }
