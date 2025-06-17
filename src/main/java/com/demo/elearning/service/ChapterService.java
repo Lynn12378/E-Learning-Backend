@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.demo.elearning.dto.ChapterDTO;
 import com.demo.elearning.entity.Chapter;
-import com.demo.elearning.entity.Material;
 import com.demo.elearning.mapper.ChapterMapper;
 import com.demo.elearning.repository.ChapterRepository;
 
